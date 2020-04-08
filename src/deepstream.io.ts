@@ -368,12 +368,14 @@ export class Deepstream extends EventEmitter {
     await Promise.all(readyPromises)
     this.transition('connection-endpoints-started')
   }
-
+ 
 /**
  * Initialization complete - Deepstream is up and running.
  */
   private run (): void {
     this.services.logger.info(EVENT.INFO, 'Deepstream started')
+    this.services.logger.debug(  EVENT.INFO,'Deepstream hello')
+    
     this.emit('started')
   }
 
